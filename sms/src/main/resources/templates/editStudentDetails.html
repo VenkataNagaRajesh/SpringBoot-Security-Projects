@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Student</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Student Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/students}">Student Management</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-mg-6 col-sm-6 jumbotron container  md-5 justify-content-center card">
+			<div class="">
+				<h1 class="text-center">Create new student</h1>
+				<div class="card-body">
+					<form th:action="@{/students/update/{id}(id=${student.id})}" th:object="${student}" method="POST">
+						<div class="form-group">
+							<label> Student First name </label>
+							<input type ="text" name="firstName" th:field="*{firstName}" placeholder="enter first name"
+							class="form-control-sm ">
+						</div>
+						<div class="form-group">
+							<label> Student Last name </label>
+							<input type ="text" name="firstName" th:field="*{lastName}" placeholder="enter last name"
+							class="form-control-sm ">
+						</div>
+						<div class="form-group">
+							<label> Student email </label>
+							<input type ="text" name="email" th:field="*{email}" placeholder="enter email"
+							class="form-control-sm ">
+						</div>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-sm btn-success">submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

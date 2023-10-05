@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container">
+  	<div class="container-fluid my-5">
+  	<div class="row">
+  		<div class="col-md-2"></div>
+  		<div class="col-md-7">
+    <h1>Welcome to spring boot registration and login process </h1>
+    
+    <form th:action="@{/register}" method="post" class="form-group my-5"  th:object="${user}">
+		<label for="Enter the name" class="form-label">Enter the name</label>
+			<input type="text" class="form-control from-control-sm" id="name" name="name"  required autocomplete="off" th:field="${user.name}">
+		<label for="Enter the user name" class="form-label">Enter the user name</label>
+			<input type="text" class="form-control from-control-sm" id="name" name="username" required autocomplete="off" th:field="${user.username}">
+		<label for="Enter the password" class="form-label">Enter the password</label>
+			<input type="password" class="form-control from-control-sm" id="name" name="password" required autocomplete="off" th:field="${user.password}" >   
+		<label for="Enter the Date of Birth" class="form-label">Enter the dob</label>
+			<input type="text" class="form-control from-control-sm" id="name" name="dob" required autocomplete="off" th:field="${user.dob}">
+		<label for="Enter the Date of Birth" class="form-label">Gender</label>
+			&nbsp;&nbsp;&nbsp;<input type="radio" id="gender" value="Male" name="male" th:field="${user.gender}"> &nbsp;Male 
+			<input type="radio" id="gender" value="Female" name="Female" th:field="${user.gender}"> &nbsp;Female <br>
+		<label for="select languages" class="form-label">Select languages
+		</label><br>
+		<input type="checkbox" class="form-check-input" id="technology" name="java"> &nbsp;&nbsp;<label for="java" class="form-check-label">Core Java</label></br>
+		
+		<input type="checkbox" class="form-check-input" id="technology" value="advanced java" th:field="${user.technology}">&nbsp;&nbsp;<label for="Adavanced Java" class="form-check-label">Adavanced Java</label></br>
+		<input type="checkbox" class="form-check-input" id="technology" value="Spring core" th:field="${user.technology}">&nbsp;&nbsp;<label for="Srping core" class="form-check-label">Srping core </label></br>
+		<input type="checkbox" class="form-check-input" id="technology" value="Spring boot" th:field="${user.technology}">&nbsp;&nbsp;<label for="Srping boot" class="form-check-label">Srping boot</label></br>
+		<input type="checkbox" class="form-check-input" id="technology" value="Oracle" th:field="${user.technology}">&nbsp;&nbsp;<label for="Oracle" class="form-check-label">Oracle</label></br>
+		<button class="btn btn-sm btn-outline-success my-5 center" style="float:right;margin-right:20px">Submit</button> 
+		<a class="btn btn-sm btn-outline-primary my-5 center" th:href="@{/login}"style="float:right;margin-right:20px">Login</a>&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-sm btn-outline-dark my-5 center" th:href="@{/}"style="float:right;margin-right:20px">Go back</a>&nbsp;&nbsp;&nbsp;
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
